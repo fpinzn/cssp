@@ -1,0 +1,209 @@
+#!/usr/bin/python
+# ------------------------------------------------------------
+# css_parser.py
+#
+# tokenizer for css
+# ------------------------------------------------------------
+import ply.lex as lex
+import ply.yacc as yacc
+import sys
+import logging
+DEBUG=False
+#List of pstates
+pstates=['NORMAL',
+		'RULE']
+
+pstate='NORMAL'
+inComment=False
+actualRule=None
+actualSelector=None
+PASE=0
+# List of token names that ARE NOT reserved words.
+tokens=[
+	'START_COMMENT',
+	'END_COMMENT',
+	'DOLLAR',
+	'AT',
+	'EQUALS',
+	'RCURL',
+	'LCURL',
+	'COLON',
+	'SEMICOLON',
+	'STRING'
+]
+
+#List of reserved words.
+reserved={
+	'private': 'PRIVATE'
+}
+#The final list of tokens made up from plain tokens and reserved words.
+tokens = tokens + list(reserved.values())
+#List of ignored characters
+t_ignore = ' \t\r'
+
+#Token value assignation
+t_LCURL=r'\{'
+t_RCURL=r'\}'
+t_EQUALS=r'='
+t_DOLLAR=r'[$]'
+t_AT=r'@'
+t_START_COMMENT=r'[/][*]'
+t_END_COMMENT=r'[*][/]'
+t_COLON=':'
+t_SEMICOLON=r'[;]'
+
+
+
+def t_STRING(t):
+	'([A-Za-z0-9 ]|[,_>.#"%()]|[-]|\'|[[]|[]])+'
+	#Si no es una palabra reservada devuelve String
+	t.type=reserved.get(t.value,'STRING')
+	return t
+	
+# Error handling rule
+def t_error(t):
+    print "Illegal character '%s'" % t.value[0]
+    t.lexer.skip(1)
+# NewLine handling rule
+def t_newline(t):
+	r'\n+'
+	t.lexer.lineno+=t.value.count("\n")
+#######################################################PARSER
+lex.lex()
+
+#dictionary of constants
+constants={}
+#directory of plain rules
+plain_rules=[]
+#directory of directionable rules
+directionable_rules={}
+
+def p_line(t):
+	'''line : constant_definition
+			| css_property
+			| selector
+			| rule_invocation
+			| comment
+			| void_line
+			| character'''
+	t[0]="hola"
+
+def p_constant_definition(t):
+	'constant_definition : DOLLAR STRING EQUALS STRING'
+	console("constant_definition",t)
+	if(pstate=='NORMAL'):
+		constants[t[2]]=t[4]
+		print constants
+	else:
+		error("Constant definition in a "+pstate+ "pstate")
+	
+def p_constant_invocation(t):
+	'constant_invocation : DOLLAR STRING'
+	if(PASE==1):	
+		console("constant_invocation",t)
+		if(pstate=='RULE'):
+			t[0]=constants[t[2]]
+		elif(pstate=='NORMAL'):
+			error("Constant invocation outside a rule.")
+	
+def p_rule_invocation(t):
+	'''rule_invocation : AT STRING
+						| AT STRING LCURL'''
+	if(PASE==0):
+		if(pstate=='NORMAL'):
+			actualRule=t[2]
+			directionable_rules[actualRule]=[]
+			print("new_rule")
+	elif(PASE==1):
+		if(pstate=='RULE'):
+			logMsg("rule_invocation")
+
+		
+def p_selector(t):
+	'''selector : STRING LCURL
+				| STRING COLON STRING LCURL'''
+	if(len(t)==3):
+		actualSelector=t[1]
+	else:
+		actualSelector=str(t[1])+":"+str(t[3])
+	
+	if(PASE==0):
+		plain_rules.append([actualSelector,[]])
+	logMsg("selector: "+actualSelector)
+ 
+def getAsInDic(tup,key):
+	for a in tup:
+		if(a[0]=="key"):
+			return a[1]
+	raise KeyError(str(a[0])+" no encontrado en"+str(tup))
+	
+def p_css_property(t):
+	'''css_property : STRING COLON STRING SEMICOLON
+					| STRING COLON constant_invocation SEMICOLON'''
+	if(PASE==0):
+		print("CSS PROP: "+str(actualRule)+" "+str(actualSelector))
+		try:
+			print "CSS prop:"+str(directionable_rules[actualRule])
+			directionable_rules[actualRule].append([t[1],t[3]])
+			print "CSS prop:"+str(directionable_rules[actualRule])		
+			print 
+		except KeyError:
+			print "Key Error directionable: "+str(actualRule)
+		try:
+			getAsInDic(plain_rules,actualSelector).append([t[1],t[3]])
+		except KeyError:
+			pass
+	console("property:",t)
+	
+def p_character(t):
+	'''character : START_COMMENT
+				| END_COMMENT
+				| RCURL'''
+	if(pstate=='RULE'):
+		if(t[1]=="}"):
+			actualRule=None
+			actualSelector=None
+
+	
+	console("character:",t)
+
+def p_comment(t):
+	'comment : START_COMMENT STRING END_COMMENT'
+	logMsg("comment: "+str(t[2]))
+	
+def p_void_line(t):
+	'void_line : '
+	#console("void", ["void_line"]);
+	pass
+
+def p_error(t):
+	logMsg("error:"+str(t))
+
+def logMsg(msg):
+	print msg
+
+def console(name,t):
+	if(DEBUG):
+		print name+":"+str(list(t))
+
+##################################################LOGGER
+logging.basicConfig(
+	level=logging.DEBUG,
+	filename="log.txt",
+	filemode="w",
+	format="%(filename)10s:%(lineno)4d:%(message)s"
+)
+log=logging.getLogger()
+##################################################END LOGGER
+print "\t\tCONSTANTS"
+print constants
+print "\t\tPLAIN RULES"
+print plain_rules
+print "\t\tDIRECTIONABLE RULES"
+print directionable_rules
+print "\n\n\n"
+#######################################################PARSE
+def parse(line):
+	return yacc.yacc().parse(str(line),debug=log)	
+
+

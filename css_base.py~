@@ -1,0 +1,59 @@
+#!/usr/bin/python
+# ------------------------------------------------------------
+# css_base.py
+#
+# tokenizer for css
+# ------------------------------------------------------------
+import ply.lex as lex
+
+# List of token names.
+tokens=(
+
+	'PROPERTY',
+	'SELECTOR',
+	
+	'COMMENT',
+	'CCOMMENT',
+	'RCURL',
+	'LCURL',
+	'COLON',
+	'SEMICOLON',
+	
+	'STRING'
+
+)
+
+t_SEMICOLON=r'\;'
+t_COLON=r'\:'
+t_LCURL=r'\{'
+t_RCURL=r'\}'
+
+t_ignore = ' \t\r\n'
+
+
+	
+def t_COMMENT(t):
+	'/\*(.|\n)*\*/'
+
+def t_CCOMMENT(t):
+	r'[*]/'
+	return t
+		
+def t_PROPERTY(t):
+	r'.*?:.*;'
+	return t
+
+def t_STRING(t):
+	r'([A-Za-z0-9 ]|[,_>.:@#="]|[-]|\'|[[]|[]])+'
+	return t
+
+# Error handling rule
+def t_error(t):
+    print "Illegal character '%s'" % t.value[0]
+    t.lexer.skip(1)
+lexer = lex.lex()
+while True:
+	data=raw_input()
+	lexer.input(data)
+	for tok in lexer:
+		print tok

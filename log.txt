@@ -1,0 +1,1611 @@
+   yacc.py: 292:PLY: PARSE DEBUG START
+   yacc.py: 337:
+   yacc.py: 338:State  : 0
+   yacc.py: 352:Stack  : . LexToken(DOLLAR,'$',1,0)
+   yacc.py: 391:Action : Reduce rule [constant_block -> <empty>] with [] and goto state 3
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 2
+   yacc.py: 352:Stack  : constant_block . LexToken(DOLLAR,'$',1,0)
+   yacc.py: 366:Action : Shift and goto state 3
+   yacc.py: 337:
+   yacc.py: 338:State  : 3
+   yacc.py: 352:Stack  : constant_block DOLLAR . LexToken(STRING,'prop',1,1)
+   yacc.py: 366:Action : Shift and goto state 6
+   yacc.py: 337:
+   yacc.py: 338:State  : 6
+   yacc.py: 352:Stack  : constant_block DOLLAR STRING . LexToken(EQUALS,'=',1,5)
+   yacc.py: 366:Action : Shift and goto state 11
+   yacc.py: 337:
+   yacc.py: 338:State  : 11
+   yacc.py: 352:Stack  : constant_block DOLLAR STRING EQUALS . LexToken(STRING,'hoklo',1,6)
+   yacc.py: 366:Action : Shift and goto state 15
+   yacc.py: 337:
+   yacc.py: 338:State  : 15
+   yacc.py: 352:Stack  : constant_block DOLLAR STRING EQUALS STRING . LexToken(STRING,'div#page',5,36)
+   yacc.py: 389:Action : Reduce rule [constant_definition -> DOLLAR STRING EQUALS STRING] with ['$','prop','=','hoklo'] and goto state 6
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 4
+   yacc.py: 352:Stack  : constant_block constant_definition . LexToken(STRING,'div#page',5,36)
+   yacc.py: 389:Action : Reduce rule [constant_block -> constant_block constant_definition] with [None,None] and goto state 2
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 2
+   yacc.py: 352:Stack  : constant_block . LexToken(STRING,'div#page',5,36)
+   yacc.py: 391:Action : Reduce rule [rule_block -> <empty>] with [] and goto state 5
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div#page',5,36)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div#page',5,36)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div#page',5,36)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',5,44)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with ['div#page'] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7766360> ('div#page')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',5,44)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',5,44)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,'div#page',None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb77a004c> ([None, 'div#page'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',5,44)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width ',6,47)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',6,53)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'1000px ',6,55)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',6,62)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',7,65)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width ',':','1000px ',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761e8c> ([['width ', '1000px ']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',7,65)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7761e8c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7761e8c> ([['width ', '1000px ']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',7,65)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(AT,'@',8,67)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb77a004c>,'{',<list @ 0xb7761e8c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(AT,'@',8,67)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(AT,'@',8,67)
+   yacc.py: 366:Action : Shift and goto state 9
+   yacc.py: 337:
+   yacc.py: 338:State  : 9
+   yacc.py: 352:Stack  : constant_block rule_block AT . LexToken(STRING,'hola',8,68)
+   yacc.py: 366:Action : Shift and goto state 13
+   yacc.py: 337:
+   yacc.py: 338:State  : 13
+   yacc.py: 352:Stack  : constant_block rule_block AT STRING . LexToken(STRING,'div#title ',9,74)
+   yacc.py: 389:Action : Reduce rule [rule_name -> AT STRING] with ['@','hola'] and goto state 12
+   yacc.py: 423:Result : <str @ 0xb7766200> ('hola')
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div#title ',9,74)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div#title ',9,74)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',9,84)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with ['div#title '] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7764048> ('div#title ')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',9,84)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',9,84)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with ['hola',None,'div#title ',None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7761b0c> (['hola', 'div#title '])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',9,84)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'font-size',10,87)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',10,96)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'36px',10,98)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',10,102)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'color',11,106)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['font-size',':','36px',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761bec> ([['font-size', '36px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'color',11,106)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7761bec>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7761bec> ([['font-size', '36px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'color',11,106)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',11,111)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'#000',11,113)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',11,117)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'jaja',12,120)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['color',':','#000',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761eac> ([['color', '#000']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'jaja',12,120)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7761bec>,<list @ 0xb7761eac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7761bec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'jaja',12,120)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',12,124)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(DOLLAR,'$',12,125)
+   yacc.py: 366:Action : Shift and goto state 28
+   yacc.py: 337:
+   yacc.py: 338:State  : 28
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON DOLLAR . LexToken(STRING,'prop',12,126)
+   yacc.py: 366:Action : Shift and goto state 32
+   yacc.py: 337:
+   yacc.py: 338:State  : 32
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON DOLLAR STRING . LexToken(SEMICOLON,';',12,130)
+   yacc.py: 389:Action : Reduce rule [constant_name -> DOLLAR STRING] with ['$','prop'] and goto state 7
+   yacc.py: 423:Result : <str @ 0xb7766300> ('hoklo')
+   yacc.py: 337:
+   yacc.py: 338:State  : 29
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON constant_name . LexToken(SEMICOLON,';',12,130)
+   yacc.py: 366:Action : Shift and goto state 33
+   yacc.py: 337:
+   yacc.py: 338:State  : 33
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON constant_name SEMICOLON . LexToken(STRING,'text-align',13,134)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON constant_name SEMICOLON] with ['jaja',':','hoklo',';'] and goto state 20
+   yacc.py: 423:Result : <list @ 0xb7761eac> ([['jaja', 'hoklo']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'text-align',13,134)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7761bec>,<list @ 0xb7761eac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7761bec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'text-align',13,134)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',13,144)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'center',13,146)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',13,152)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',14,155)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['text-align',':','center',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761eac> ([['text-align', 'center']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',14,155)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7761bec>,<list @ 0xb7761eac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7761bec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',14,155)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(AT,'@',16,160)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7761b0c>,'{',<list @ 0xb7761bec>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(AT,'@',16,160)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(AT,'@',16,160)
+   yacc.py: 366:Action : Shift and goto state 9
+   yacc.py: 337:
+   yacc.py: 338:State  : 9
+   yacc.py: 352:Stack  : constant_block rule_block AT . LexToken(STRING,'chao',16,161)
+   yacc.py: 366:Action : Shift and goto state 13
+   yacc.py: 337:
+   yacc.py: 338:State  : 13
+   yacc.py: 352:Stack  : constant_block rule_block AT STRING . LexToken(STRING,'span.table_buttons_navigation',17,167)
+   yacc.py: 389:Action : Reduce rule [rule_name -> AT STRING] with ['@','chao'] and goto state 12
+   yacc.py: 423:Result : <str @ 0xb7766540> ('chao')
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'span.table_buttons_navigation',17,167)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'span.table_buttons_navigation',17,167)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',17,196)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb7762138>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7762138> ('span.table_buttons_navigation')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',17,196)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',17,196)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with ['chao',None,<str @ 0xb7762138>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb77a004c> (['chao', 'span.table_buttons_navigation' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',17,196)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(AT,'@',18,199)
+   yacc.py: 366:Action : Shift and goto state 18
+   yacc.py: 337:
+   yacc.py: 338:State  : 18
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT . LexToken(STRING,'hola',18,200)
+   yacc.py: 366:Action : Shift and goto state 25
+   yacc.py: 337:
+   yacc.py: 338:State  : 25
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT STRING . LexToken(STRING,'float',19,207)
+   yacc.py: 389:Action : Reduce rule [property -> AT STRING] with ['@','hola'] and goto state 21
+   yacc.py: 423:Result : <list @ 0xb77662ec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'float',19,207)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb77662ec>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb77662ec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'float',19,207)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',19,212)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'right',19,213)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',19,218)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',20,221)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['float',':','right',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77a00ac> ([['float', 'right']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',20,221)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77662ec>,<list @ 0xb77a00ac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77662ec> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',20,221)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'span.table_buttons_actions',22,226)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb77a004c>,'{',<list @ 0xb77662ec>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'span.table_buttons_actions',22,226)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'span.table_buttons_actions',22,226)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'span.table_buttons_actions',22,226)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'span.table_buttons_actions',22,226)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',22,252)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb7762448>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7762448> ('span.table_buttons_actions')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',22,252)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',22,252)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb7762448>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb779dd4c> ([None, 'span.table_buttons_actions'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',22,252)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(AT,'@',23,255)
+   yacc.py: 366:Action : Shift and goto state 18
+   yacc.py: 337:
+   yacc.py: 338:State  : 18
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT . LexToken(STRING,'chao',23,256)
+   yacc.py: 366:Action : Shift and goto state 25
+   yacc.py: 337:
+   yacc.py: 338:State  : 25
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT STRING . LexToken(STRING,'float',24,263)
+   yacc.py: 389:Action : Reduce rule [property -> AT STRING] with ['@','chao'] and goto state 21
+   yacc.py: 423:Result : <list @ 0xb776634c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'float',24,263)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb776634c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb776634c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'float',24,263)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',24,268)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'left',24,269)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',24,273)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',25,276)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['float',':','left',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761b0c> ([['float', 'left']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',25,276)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb776634c>,<list @ 0xb7761b0c>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb776634c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',25,276)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(AT,'@',27,281)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb779dd4c>,'{',<list @ 0xb776634c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(AT,'@',27,281)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(AT,'@',27,281)
+   yacc.py: 366:Action : Shift and goto state 9
+   yacc.py: 337:
+   yacc.py: 338:State  : 9
+   yacc.py: 352:Stack  : constant_block rule_block AT . LexToken(STRING,'pri',27,282)
+   yacc.py: 366:Action : Shift and goto state 13
+   yacc.py: 337:
+   yacc.py: 338:State  : 13
+   yacc.py: 352:Stack  : constant_block rule_block AT STRING . LexToken(LCURL,'{',27,285)
+   yacc.py: 389:Action : Reduce rule [rule_name -> AT STRING] with ['@','pri'] and goto state 12
+   yacc.py: 423:Result : <str @ 0xb7766620> ('pri')
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(LCURL,'{',27,285)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(LCURL,'{',27,285)
+   yacc.py: 391:Action : Reduce rule [selector -> <empty>] with [] and goto state 16
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',27,285)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',27,285)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with ['pri',None,None,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7761bcc> (['pri', None])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',27,285)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'background-color',28,289)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',28,305)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'#FFF',28,306)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',28,310)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',29,313)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with [<str @ 0xb7764110>,':','#FFF',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761b8c> ([['background-color', '#FFF']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',29,313)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7761b8c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7761b8c> ([['background-color', '#FFF']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',29,313)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'tr.table_element',30,316)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [['pri', None],'{',<list @ 0xb7761b8c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'tr.table_element',30,316)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'tr.table_element',30,316)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'tr.table_element',30,316)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'tr.table_element',30,316)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(COLON,':',30,332)
+   yacc.py: 366:Action : Shift and goto state 26
+   yacc.py: 337:
+   yacc.py: 338:State  : 26
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING COLON . LexToken(STRING,'hover',30,333)
+   yacc.py: 366:Action : Shift and goto state 31
+   yacc.py: 337:
+   yacc.py: 338:State  : 31
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING COLON STRING . LexToken(LCURL,'{',30,338)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING COLON STRING] with [<str @ 0xb7764138>,':','hover'] and goto state 15
+   yacc.py: 423:Result : <str @ 0xb7757aa0> ('tr.table_element:hover')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',30,338)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',30,338)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb7757aa0>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([None, 'tr.table_element:hover'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',30,338)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'background-color',31,342)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',31,358)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'#EEE',31,359)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',31,363)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',32,366)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with [<str @ 0xb7764138>,':','#EEE',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb779de0c> ([['background-color', '#EEE']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',32,366)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb779de0c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb779de0c> ([['background-color', '#EEE']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',32,366)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'tr.table_element_selected',34,371)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7761ecc>,'{',<list @ 0xb779de0c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'tr.table_element_selected',34,371)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'tr.table_element_selected',34,371)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'tr.table_element_selected',34,371)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'tr.table_element_selected',34,371)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',34,396)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb7762480>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7762480> ('tr.table_element_selected')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',34,396)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',34,396)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb7762480>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb776664c> ([None, 'tr.table_element_selected'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',34,396)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'background-color',35,400)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',35,416)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'#DDD',35,417)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',35,421)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',36,424)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with [<str @ 0xb7764070>,':','#DDD',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77665cc> ([['background-color', '#DDD']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',36,424)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb77665cc>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb77665cc> ([['background-color', '#DDD']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',36,424)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'table#table',37,427)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb776664c>,'{',<list @ 0xb77665cc>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'table#table',37,427)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'table#table',37,427)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'table#table',37,427)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'table#table',37,427)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',37,438)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with ['table#table'] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb77640e8> ('table#table')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',37,438)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',37,438)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,'table#table',None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb776666c> ([None, 'table#table'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',37,438)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width',38,442)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',38,447)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'100%',38,448)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',38,452)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'float',39,456)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','100%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77666ac> ([['width', '100%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'float',39,456)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb77666ac>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb77666ac> ([['width', '100%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'float',39,456)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',39,461)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'right',39,462)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',39,467)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(AT,'@',40,470)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['float',':','right',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['float', 'right']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(AT,'@',40,470)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77666ac>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77666ac> ([['width', '100%'], ['float', 'right']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(AT,'@',40,470)
+   yacc.py: 366:Action : Shift and goto state 18
+   yacc.py: 337:
+   yacc.py: 338:State  : 18
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block AT . LexToken(STRING,'pri',40,471)
+   yacc.py: 366:Action : Shift and goto state 25
+   yacc.py: 337:
+   yacc.py: 338:State  : 25
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block AT STRING . LexToken(RCURL,'}',41,476)
+   yacc.py: 389:Action : Reduce rule [property -> AT STRING] with ['@','pri'] and goto state 21
+   yacc.py: 423:Result : <list @ 0xb776670c> ([['background-color', '#FFF']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',41,476)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77666ac>,<list @ 0xb776670c>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77666ac> ([['width', '100%'], ['float', 'right'],  ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',41,476)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div.table_buttons',42,479)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb776666c>,'{',<list @ 0xb77666ac>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div.table_buttons',42,479)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div.table_buttons',42,479)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div.table_buttons',42,479)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div.table_buttons',42,479)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',42,496)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb7757a10>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7757a10> ('div.table_buttons')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',42,496)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',42,496)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb7757a10>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([None, 'div.table_buttons'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',42,496)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width',43,500)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',43,505)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'100%',43,506)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',43,510)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',44,513)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','100%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77667ec> ([['width', '100%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',44,513)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb77667ec>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb77667ec> ([['width', '100%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',44,513)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div.popup',46,518)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7761ecc>,'{',<list @ 0xb77667ec>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div.popup',46,518)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div.popup',46,518)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div.popup',46,518)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div.popup',46,518)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',46,527)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with ['div.popup'] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7764160> ('div.popup')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',46,527)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',46,527)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,'div.popup',None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb776682c> ([None, 'div.popup'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',46,527)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'visibility',47,531)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',47,541)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'hidden',47,542)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',47,548)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',48,551)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['visibility',':','hidden',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb776686c> ([['visibility', 'hidden']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(RCURL,'}',48,551)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb776686c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb776686c> ([['visibility', 'hidden']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',48,551)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div.active_popup',50,556)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb776682c>,'{',<list @ 0xb776686c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div.active_popup',50,556)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div.active_popup',50,556)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div.active_popup',50,556)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div.active_popup',50,556)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',50,572)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb7764188>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb7764188> ('div.active_popup')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',50,572)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',50,572)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb7764188>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb77667ac> ([None, 'div.active_popup'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',50,572)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'position',51,576)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',51,584)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'absolute',51,585)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',51,593)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'left',52,597)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['position',':','absolute',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'left',52,597)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb77668ec>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'left',52,597)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',52,601)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'400px',52,602)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',52,607)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'top',53,611)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['left',':','400px',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['left', '400px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'top',53,611)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'top',53,611)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',53,614)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'200px',53,615)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',53,620)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'background-color',54,624)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['top',':','200px',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['top', '200px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'background-color',54,624)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'background-color',54,624)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',54,640)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'rgba(255,255,255,0.8)',54,641)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',54,662)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'border',55,666)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with [<str @ 0xb7764228>,':',<str @ 0xb77579b0>,';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['background-color', 'rgba(255,255,255, ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'border',55,666)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'border',55,666)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',55,672)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'solid',55,673)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',55,678)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'border-width',56,682)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['border',':','solid',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['border', 'solid']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'border-width',56,682)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'border-width',56,682)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',56,694)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'3px',56,695)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',56,698)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'visibility',57,702)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['border-width',':','3px',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['border-width', '3px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'visibility',57,702)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'visibility',57,702)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',57,712)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'visible',57,713)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',57,720)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',58,723)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['visibility',':','visible',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7761ecc> ([['visibility', 'visible']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',58,723)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb77668ec>,<list @ 0xb7761ecc>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb77668ec> ([['position', 'absolute'], ['left', '400 ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',58,723)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div#navigation_bar',60,728)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb77667ac>,'{',<list @ 0xb77668ec>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div#navigation_bar',60,728)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div#navigation_bar',60,728)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div#navigation_bar',60,728)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div#navigation_bar',60,728)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',60,746)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb77579e0>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb77579e0> ('div#navigation_bar')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',60,746)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',60,746)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb77579e0>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7766aec> ([None, 'div#navigation_bar'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',60,746)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(AT,'@',61,749)
+   yacc.py: 366:Action : Shift and goto state 18
+   yacc.py: 337:
+   yacc.py: 338:State  : 18
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT . LexToken(STRING,'hola',61,750)
+   yacc.py: 366:Action : Shift and goto state 25
+   yacc.py: 337:
+   yacc.py: 338:State  : 25
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL AT STRING . LexToken(STRING,'width',62,757)
+   yacc.py: 389:Action : Reduce rule [property -> AT STRING] with ['@','hola'] and goto state 21
+   yacc.py: 423:Result : <list @ 0xb776660c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'width',62,757)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb776660c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb776660c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'width',62,757)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',62,762)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'75%',62,763)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',62,766)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(STRING,'height',63,770)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','75%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb776682c> ([['width', '75%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(STRING,'height',63,770)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb776660c>,<list @ 0xb776682c>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb776660c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'height',63,770)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',63,776)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'75px',63,777)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',63,781)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',64,784)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['height',':','75px',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb776682c> ([['height', '75px']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',64,784)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb776660c>,<list @ 0xb776682c>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb776660c> ([['font-size', '36px'], ['color', '#000' ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',64,784)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div.sidebar',67,802)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7766aec>,'{',<list @ 0xb776660c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div.sidebar',67,802)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div.sidebar',67,802)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div.sidebar',67,802)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div.sidebar',67,802)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',67,813)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with ['div.sidebar'] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb77642c8> ('div.sidebar')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',67,813)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',67,813)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,'div.sidebar',None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7766c6c> ([None, 'div.sidebar'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',67,813)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width',68,817)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',68,822)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'25%',68,823)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',68,826)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'float',69,830)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','25%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7766b8c> ([['width', '25%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'float',69,830)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7766b8c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7766b8c> ([['width', '25%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'float',69,830)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',69,835)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'left',69,836)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',69,840)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',70,842)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['float',':','left',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb77667ac> ([['float', 'left']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',70,842)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7766b8c>,<list @ 0xb77667ac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7766b8c> ([['width', '25%'], ['float', 'left']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',70,842)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(AT,'@',72,896)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7766c6c>,'{',<list @ 0xb7766b8c>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(AT,'@',72,896)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(AT,'@',72,896)
+   yacc.py: 366:Action : Shift and goto state 9
+   yacc.py: 337:
+   yacc.py: 338:State  : 9
+   yacc.py: 352:Stack  : constant_block rule_block AT . LexToken(STRING,'pruebita',72,897)
+   yacc.py: 366:Action : Shift and goto state 13
+   yacc.py: 337:
+   yacc.py: 338:State  : 13
+   yacc.py: 352:Stack  : constant_block rule_block AT STRING . LexToken(STRING,'div.main_content',73,907)
+   yacc.py: 389:Action : Reduce rule [rule_name -> AT STRING] with ['@','pruebita'] and goto state 12
+   yacc.py: 423:Result : <str @ 0xb7766de0> ('pruebita')
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div.main_content',73,907)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div.main_content',73,907)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',73,923)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb77642f0>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb77642f0> ('div.main_content')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',73,923)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',73,923)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with ['pruebita',None,<str @ 0xb77642f0>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7766aec> (['pruebita', 'div.main_content'])
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',73,923)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width',74,927)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',74,932)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'75%',74,933)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',74,936)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'float',75,940)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','75%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7766dac> ([['width', '75%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'float',75,940)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7766dac>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7766dac> ([['width', '75%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'float',75,940)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',75,945)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'right',75,946)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',75,951)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(RCURL,'}',76,954)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['float',':','right',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7766cac> ([['float', 'right']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(RCURL,'}',76,954)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7766dac>,<list @ 0xb7766cac>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7766dac> ([['width', '75%'], ['float', 'right']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(RCURL,'}',76,954)
+   yacc.py: 366:Action : Shift and goto state 23
+   yacc.py: 337:
+   yacc.py: 338:State  : 23
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block RCURL . LexToken(STRING,'div#navigation_bar > span.button',78,982)
+   yacc.py: 389:Action : Reduce rule [rule -> rule_declaration LCURL properties_block RCURL] with [<list @ 0xb7766aec>,'{',<list @ 0xb7766dac>,'}'] and goto state 8
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 8
+   yacc.py: 352:Stack  : constant_block rule_block rule . LexToken(STRING,'div#navigation_bar > span.button',78,982)
+   yacc.py: 389:Action : Reduce rule [rule_block -> rule_block rule] with [None,None] and goto state 4
+   yacc.py: 423:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 5
+   yacc.py: 352:Stack  : constant_block rule_block . LexToken(STRING,'div#navigation_bar > span.button',78,982)
+   yacc.py: 391:Action : Reduce rule [rule_name -> <empty>] with [] and goto state 13
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 10
+   yacc.py: 352:Stack  : constant_block rule_block rule_name . LexToken(STRING,'div#navigation_bar > span.button',78,982)
+   yacc.py: 391:Action : Reduce rule [new_rule -> <empty>] with [] and goto state 10
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 14
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule . LexToken(STRING,'div#navigation_bar > span.button',78,982)
+   yacc.py: 366:Action : Shift and goto state 20
+   yacc.py: 337:
+   yacc.py: 338:State  : 20
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule STRING . LexToken(LCURL,'{',78,1014)
+   yacc.py: 389:Action : Reduce rule [selector -> STRING] with [<str @ 0xb77624b8>] and goto state 14
+   yacc.py: 423:Result : <str @ 0xb77624b8> ('div#navigation_bar > span.button')
+   yacc.py: 337:
+   yacc.py: 338:State  : 21
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector . LexToken(LCURL,'{',78,1014)
+   yacc.py: 391:Action : Reduce rule [new_selector -> <empty>] with [] and goto state 11
+   yacc.py: 462:Result : <NoneType @ 0x8223f58> (None)
+   yacc.py: 337:
+   yacc.py: 338:State  : 27
+   yacc.py: 352:Stack  : constant_block rule_block rule_name new_rule selector new_selector . LexToken(LCURL,'{',78,1014)
+   yacc.py: 389:Action : Reduce rule [rule_declaration -> rule_name new_rule selector new_selector] with [None,None,<str @ 0xb77624b8>,None] and goto state 9
+   yacc.py: 423:Result : <list @ 0xb7766ccc> ([None, 'div#navigation_bar > span.button ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 7
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration . LexToken(LCURL,'{',78,1014)
+   yacc.py: 366:Action : Shift and goto state 12
+   yacc.py: 337:
+   yacc.py: 338:State  : 12
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL . LexToken(STRING,'width',79,1018)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING . LexToken(COLON,':',79,1023)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON . LexToken(STRING,'16%',79,1024)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING . LexToken(SEMICOLON,';',79,1027)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL STRING COLON STRING SEMICOLON . LexToken(STRING,'background-color',80,1031)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with ['width',':','16%',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7766d6c> ([['width', '16%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 19
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL property . LexToken(STRING,'background-color',80,1031)
+   yacc.py: 389:Action : Reduce rule [properties_block -> property] with [<list @ 0xb7766d6c>] and goto state 18
+   yacc.py: 423:Result : <list @ 0xb7766d6c> ([['width', '16%']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(STRING,'background-color',80,1031)
+   yacc.py: 366:Action : Shift and goto state 16
+   yacc.py: 337:
+   yacc.py: 338:State  : 16
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING . LexToken(COLON,':',80,1047)
+   yacc.py: 366:Action : Shift and goto state 22
+   yacc.py: 337:
+   yacc.py: 338:State  : 22
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON . LexToken(STRING,'#FFF',80,1048)
+   yacc.py: 366:Action : Shift and goto state 30
+   yacc.py: 337:
+   yacc.py: 338:State  : 30
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING . LexToken(SEMICOLON,';',80,1052)
+   yacc.py: 366:Action : Shift and goto state 34
+   yacc.py: 337:
+   yacc.py: 338:State  : 34
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block STRING COLON STRING SEMICOLON . LexToken(AT,'@',81,1055)
+   yacc.py: 389:Action : Reduce rule [property -> STRING COLON STRING SEMICOLON] with [<str @ 0xb7764318>,':','#FFF',';'] and goto state 19
+   yacc.py: 423:Result : <list @ 0xb7766c6c> ([['background-color', '#FFF']])
+   yacc.py: 337:
+   yacc.py: 338:State  : 24
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block property . LexToken(AT,'@',81,1055)
+   yacc.py: 389:Action : Reduce rule [properties_block -> properties_block property] with [<list @ 0xb7766d6c>,<list @ 0xb7766c6c>] and goto state 17
+   yacc.py: 423:Result : <list @ 0xb7766d6c> ([['width', '16%'], ['background-color',  ...)
+   yacc.py: 337:
+   yacc.py: 338:State  : 17
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block . LexToken(AT,'@',81,1055)
+   yacc.py: 366:Action : Shift and goto state 18
+   yacc.py: 337:
+   yacc.py: 338:State  : 18
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block AT . LexToken(STRING,'detalles',81,1056)
+   yacc.py: 366:Action : Shift and goto state 25
+   yacc.py: 337:
+   yacc.py: 338:State  : 25
+   yacc.py: 352:Stack  : constant_block rule_block rule_declaration LCURL properties_block AT STRING . LexToken(RCURL,'}',82,1066)
+   yacc.py: 389:Action : Reduce rule [property -> AT STRING] with ['@','detalles'] and goto state 21

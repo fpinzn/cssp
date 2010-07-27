@@ -1,0 +1,11 @@
+#!/usr/bin/python
+from css_parser import parse
+import sys
+data=(open(sys.argv[1],'r'))
+while True:
+	try:
+		line=data.readline()
+		parse(line,debug=log)	
+	except EOFError:
+		print "EOFF"
+		break

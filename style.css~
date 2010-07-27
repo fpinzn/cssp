@@ -1,0 +1,111 @@
+/*  
+Theme Name: Bitremix
+Theme URI: http://bitremix.com
+Description: two columns,fixed width, left sidebar
+Version: 1.0
+Author: David Pelaez
+Author URI: http://david.bitremix.com
+Tags:two columns,fixed width, left sidebar
+Comments: Softly based in the CSS by http://www.upstartblogger.com/
+*/
+$jojo=#FFF
+
+*{
+	margin:0;
+	padding:0;
+	}
+
+body {
+	background-color: #fff;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	background-color: #fff;
+	padding: 20px;
+	font-size: .88em;
+	line-height: 1.5em;
+	color: #444444;
+}
+
+
+#wrapper {
+	width: 1000px;	
+	margin-left: auto ;
+  	margin-right: auto ;
+	/*Centering code tested with IE 6, 7, Firefox, Opera and Safari*/
+}
+
+#content {
+	width: 640px;
+	padding-left: 25px;
+	padding-right: 10px;
+	float: right;
+	border: #111 solid 20px;
+	border-style: none none none solid;
+	background-color: #fff;
+	}
+
+#header{
+	padding-bottom: 10px;	
+	margin-bottom:20px;
+	}
+
+#sidebar {
+	width: 300px;
+	float: left;
+}
+
+#navbar{
+	display: block;
+	margin-left:10px;
+	list-style-type:none;
+	font-size: 350%;
+	font-weight: 900;
+}
+
+#navbar li{
+	margin-bottom: 15px;
+}
+
+#navbar li a{
+	text-decoration: none;
+	color: #000;
+}
+
+.footer {
+	clear: both;
+	text-align:center;
+	font-size: 80%;
+	line-height: 110%;
+	padding: 10px 250px 10px 250px;
+	}
+
+@hola
+p{
+	margin-bottom: 15px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 170%;
+}
+
+@hi{
+	font-size: x-large;
+	font-style:italic;
+	line-height: 140%;
+}
+
+.title{
+	@hola
+	@hi
+	hojkj:$jojo;
+	margin-bottom: 25px !important;
+}
+
+.title a{
+	padding: 0 10px 0 5px;
+	font-size:350%;
+	white-space:pre-wrap;
+	line-height: 115%;
+	color: #000;
+	background-color: #ff0;
+	letter-spacing: -5px;
+	text-decoration: none;
+}
+

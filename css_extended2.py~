@@ -1,0 +1,54 @@
+#!/usr/bin/python
+# ------------------------------------------------------------
+# css_base.py
+#
+# tokenizer for css
+# ------------------------------------------------------------
+import ply.lex as lex
+
+# List of token names that ARE NOT reserved words.
+tokens=[
+	'START_COMMENT',
+	'END_COMMENT',
+	'DOLLAR',
+	'AT',
+	'EQUALS',
+	'RCURL',
+	'LCURL',
+	'COLON',
+	'SEMICOLON',
+	'STRING'
+]
+
+#List of reserved words.
+reserved={
+	'private': 'PRIVATE'
+}
+#The final list of tokens made up from plain tokens and reserved words.
+tokens = tokens + list(reserved.values())
+#List of ignored characters
+t_ignore = ' \t\r\n;'
+
+#Token value assignation
+t_LCURL=r'\{'
+t_RCURL=r'\}'
+t_EQUALS=r'='
+t_DOLLAR=r'[$]'
+t_AT=r'@'
+t_START_COMMENT=r'[/][*]'
+t_END_COMMENT=r'[*][/]'
+t_COLON=r':'
+t_SEMICOLON=r';'
+t_STRING=r'([A-Za-z0-9 ]|[,_>.#"%]|[-]|\'|[[]|[]])+;?'
+
+
+# Error handling rule
+def t_error(t):
+    print "Illegal character '%s'" % t.value[0]
+    t.lexer.skip(1)
+lexer = lex.lex()
+while True:
+	data=raw_input()
+	lexer.input(data)
+	for tok in lexer:
+		print tok

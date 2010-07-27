@@ -1,0 +1,103 @@
+$prop=hoklo
+/* CSS Document */
+
+
+div#page{
+width : 1000px ;
+}
+@hola
+div#title {
+font-size: 36px;
+	color: #000;
+	jaja:$prop;
+	text-align: center;
+} 
+
+@chao
+span.table_buttons_navigation{
+	@hola
+	float:right;
+}
+
+span.table_buttons_actions{
+	@chao
+	float:left;
+}
+
+@pri{
+	background-color:#FFF;
+}
+tr.table_element:hover{
+	background-color:#EEE;
+}
+
+tr.table_element_selected{
+	background-color:#DDD;
+}
+table#table{
+	width:100%;
+	float:right;
+	@pri
+}
+div.table_buttons{
+	width:100%;
+}
+
+div.popup{
+	visibility:hidden;
+}
+
+div.active_popup{
+	position:absolute;
+	left:400px;
+	top:200px;
+	background-color:rgba(255,255,255,0.8);
+	border:solid;
+	border-width:3px;
+	visibility:visible;
+}
+
+div#navigation_bar{
+	@hola
+	width:75%;
+	height:75px;
+}
+
+/*sidebar*/
+div.sidebar{
+	width:25%;
+	float:left;
+}
+/*main content, para usar en conjnto con sidebar*/
+@pruebita
+div.main_content{
+	width:75%;
+	float:right;
+}
+/*Barra de navegacion*/
+div#navigation_bar > span.button{
+	width:16%;
+	background-color:#FFF;
+	@detalles
+}
+div#navigation_bar > span.button:hover{
+	background-color:#EEE;
+}
+/*informacion*/
+div#page > div#info{
+	background-color:#EEE;
+}
+/*Detalles*/
+@detalles
+div#basic_details{
+	float:left;
+}
+
+/*Detalles fotograficos*/
+div#basic_details > div.photo > span.big_photo{
+	float:left;
+}
+div#basic_details > div.photo > span.big_plane{
+	float:right;
+	@hola
+}
